@@ -1,0 +1,104 @@
+<div class="user-auth">
+  <!-- user signup -->
+  <div class="sign-up" *ngIf="!showLogin">
+    <h1 class="center">User SignUp</h1>
+    <form
+      #userSignUp="ngForm"
+      (ngSubmit)="onUserSignUp(userSignUp.value)"
+      class="common-form"
+      ngNativeValidate
+    >
+      <input
+        class="form-input"
+        type="text"
+        ngModel
+        name="name"
+        placeholder="Enter Name"
+        required
+      />
+      <input
+        class="form-input"
+        type="email"
+        ngModel
+        name="email"
+        placeholder="Enter Email"
+        required
+      />
+      <input
+        class="form-input"
+        type="password"
+        ngModel
+        name="password"
+        placeholder="Enter Password"
+        required
+      />
+      <input
+        class="form-input"
+        type="Password"
+        ngModel
+        name="cpassword"
+        placeholder="Confirm Password"
+        required
+      />
+      <span class="inline-error"> {{ confirmPasswordError }}</span>
+      <button class="form-button">Sign Up</button>
+      <span class="seller-form-footer">
+        Already have an account, To login
+        <button class="auth-seller-btn" (click)="openLogin()">
+          click here
+        </button>
+      </span>
+    </form>
+  </div>
+
+  <!-- user login -->
+  <div class="login" *ngIf="showLogin">
+    <h1 class="center">User Login</h1>
+    <form
+      #userLogin="ngForm"
+      (ngSubmit)="onUserLogin(userLogin.value)"
+      class="common-form"
+      ngNativeValidate
+    >
+      <span class="inline-error center">{{ authError }}</span>
+      <input
+        class="form-input"
+        type="email"
+        ngModel
+        name="email"
+        placeholder="Enter Email"
+        #email="ngModel"
+        email
+        required
+      />
+      <div class="inline-error error">
+        <span *ngIf="email.invalid && email.touched"
+          >Please enter valid input</span
+        >
+      </div>
+      <input
+        class="form-input"
+        type="password"
+        ngModel
+        name="password"
+        placeholder="Enter Password"
+        #password="ngModel"
+        minlength="4"
+        maxlength="20"
+        required
+      />
+      <div class="inline-error error">
+        <span *ngIf="password.invalid && password.touched"
+          >Please enter valid input</span
+        >
+      </div>
+      <button type="submit" class="form-button">Login</button>
+      <span class="seller-form-footer"
+        >Create a new account, To Signup
+        <button class="auth-seller-btn" (click)="openSignup()">
+          click here
+        </button>
+      </span>
+    </form>
+  </div>
+</div>

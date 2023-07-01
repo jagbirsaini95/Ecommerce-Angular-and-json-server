@@ -1,0 +1,227 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* Add application styles & imports to this file! */
+body {
+  font-family: sans-serif;
+  background-image: radial-gradient(rgb(255, 255, 255),
+      rgb(215, 181, 247),
+      rgb(255, 255, 255));
+}
+
+/* loader in index.html */
+.lds-facebook {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: blueviolet;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+/* end loader */
+a,
+a:hover,
+h1 {
+  color: blueviolet;
+}
+
+:focus-visible,
+:focus {
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.toast-container {
+  margin: auto;
+  background-color: green;
+  color: white;
+  letter-spacing: 1px;
+  max-width: 450px;
+}
+
+btn-unstyled-li {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+button {
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: none;
+}
+
+button[disabled] {
+  cursor: not-allowed !important;
+  opacity: 0.5;
+}
+
+/* to remove arrows from input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.pull-top {
+  margin-top: 10px !important;
+}
+
+.pull-right {
+  margin-right: 10px !important;
+}
+
+.pull-left {
+  margin-left: 10px !important;
+}
+
+.pull-bottom {
+  margin-bottom: 10px !important;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+my-app .main {
+  font-size: 50px;
+  margin: 50vh;
+  color: blueviolet;
+  transition: 0s;
+}
+
+.container {
+  margin: 1% auto;
+  border-left: 1px solid blueviolet;
+  border-right: 1px solid blueviolet;
+}
+
+:focus-visible {
+  outline: 2px solid blueviolet;
+  outline-offset: 3px;
+  background-color: rgb(246, 244, 248);
+}
+
+.common-form {
+  margin: auto;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 300px;
+}
+
+.form-input {
+  min-height: 42px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 200;
+  border-radius: 0;
+  border: 1px solid blueviolet;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.form-input:focus-visible,
+.form-input:focus {
+  outline: 2px solid blueviolet;
+  border-color: blueviolet;
+  outline-offset: 0 !important;
+  box-shadow: 0 0 0 0.3rem rgb(204, 163, 243);
+}
+
+.form-button {
+  height: 42px;
+  min-width: 42px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: 1px solid blueviolet;
+  background-color: blueviolet;
+  color: aliceblue;
+  font-size: 1.1rem;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.form-button:hover {
+  outline: 2px solid blueviolet;
+  outline-offset: 3px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.inline-error {
+  color: red;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.success-msg {
+  text-align: center;
+  color: green;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: blueviolet;
+  height: 5rem;
+  width: 5rem;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.carousel-indicators {
+  bottom: -35px;
+}
+
+.carousel-indicators button {
+  background-color: blueviolet !important;
+}
+
+.max-width {
+  width: 100%;
+}

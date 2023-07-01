@@ -1,0 +1,35 @@
+<div class="product-list">
+  <h1 class="productlist-heading">List of Products</h1>
+  <p class="success-msg">{{ removeProductMsg }}</p>
+  <table>
+    <thead>
+      <tr>
+        <td>Image</td>
+        <td>Model</td>
+        <td>Category</td>
+        <td>Color</td>
+        <td>Price</td>
+        <td class="product-description ellipsis">Description</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productList">
+        <td class="img-thumbnail"><img src="{{ item.imageURL }}" /></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.color }}</td>
+        <td>{{ item.price | currency:'INR'}}</td>
+        <td>{{ item.description }}</td>
+        <td class="center">
+          <button class="form-button pull-bottom" (click)="removeProduct(item.id)">
+            <fa-icon [icon]="removeProductIcon"></fa-icon>
+          </button><br />
+          <button class="form-button" (click)="updateProduct(item.id)">
+            <fa-icon [icon]="editProductIcon"></fa-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

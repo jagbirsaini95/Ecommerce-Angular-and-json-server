@@ -1,0 +1,25 @@
+<ngb-toast [autohide]="true" class="toast-container position-fixed end-0 p-2" [delay]="5000" *ngIf="toastMsg">
+  {{ updateProductMsg }}, You will be redirected to product listing in
+  <b>{{ count }}second</b>
+</ngb-toast>
+<div class="update-product">
+  <h1 class="center">Update Product</h1>
+
+  <br />
+  <form #updateProduct="ngForm" class="common-form" (ngSubmit)="onClickUpdateProduct(updateProduct.value)"
+    ngNativeValidate>
+    <input class="form-input" type="text" ngModel="{{ product.name }}" name="name" placeholder="Enter Product Name"
+      required />
+    <input class="form-input" type="text" ngModel="{{ product.price }}" name="price" placeholder="Enter Product Price"
+      required />
+    <input class="form-input" type="text" ngModel="{{ product.category }}" name="category"
+      placeholder="Enter Product Category" required />
+    <input class="form-input" type="text" ngModel="{{ product.color }}" name="color" placeholder="Enter Product Color"
+      required />
+    <textarea class="form-input" type="text" ngModel="{{ product.description }}" name="description"
+      placeholder="Enter Product Description" required></textarea>
+    <textarea class="form-input" type="text" ngModel="{{ product.imageURL }}" name="imageURL"
+      placeholder="Enter Product Image URL" required></textarea>
+    <button class="form-button">Update product</button>
+  </form>
+</div>

@@ -1,0 +1,51 @@
+<div class="my-order">
+    <h1 class="center">My Orders</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1">
+                <h5><strong> Order ID</strong></h5>
+            </div>
+            <div class="col-sm-3">
+                <h5> <strong>img</strong></h5>
+            </div>
+            <div class="col-sm-2">
+                <h5> <strong>Delivery Address</strong></h5>
+            </div>
+            <div class="col-sm-2">
+                <h5><strong> Total Price</strong></h5>
+            </div>
+            <div class="col-sm-2">
+                <h5><strong> Status</strong></h5>
+            </div>
+            <div class="col-sm-1">
+                <h5><strong> Action</strong></h5>
+            </div>
+        </div>
+        <div class="row product-data" *ngFor="let orderItem of orderData">
+            <div class="col-sm-1 p-id">
+                <h6># {{orderItem.id}}</h6>
+            </div>
+            <div class="col-sm-3 p-image">
+                <h6> Product image</h6>
+            </div>
+            <div class="col-sm-2 p-address">
+                <h6> {{orderItem.locality}},
+                    {{orderItem.address}},<br>
+                    {{orderItem.city}}, <br>
+                    {{orderItem.state}}-{{orderItem.pincode}} <br>
+                    {{orderItem.email}} <br>
+                    {{orderItem.mobile}}
+                </h6>
+            </div>
+            <div class="col-sm-2 p-price">
+                <h6> {{orderItem.totalAmount}}</h6>
+            </div>
+            <div class="col-sm-2 p-status">
+                <h6>In-progress</h6>
+            </div>
+            <div class="col-sm-2 p-action">
+                <button class="form-button" (click)="cancelOrder(orderItem.id)"> Cancel Order</button>
+            </div>
+        </div>
+    </div>
+</div>

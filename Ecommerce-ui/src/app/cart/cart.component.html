@@ -1,0 +1,52 @@
+<div class="cart">
+    <h1 class="center">User Cart</h1>
+    <div class="row">
+        <div class="col-sm-7 details">
+            <div *ngFor="let product of cartData">
+                <ngb-accordion [closeOthers]="true" activeIds="">
+                    <ngb-panel id="{{product.id}}" title="{{product.name}}">
+                        <ng-template ngbPanelContent>
+                            <div class="card" style="width: 100%; flex-direction: row; justify-content: space-around;">
+                                <div class="product-img">
+                                    <img class="card-img-top" src="{{product.imageURL}}" alt="Card image cap">
+                                </div>
+                                <div class="product-details">
+                                    <div class="card-body title">
+                                        <h5 class="card-title">{{product.name | titlecase}}</h5>
+                                        <button class="form-button" (click)="removeProductFromCart(product.id)"><fa-icon
+                                                [icon]="removeProductIcon"></fa-icon></button>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">price: {{product.price}} </li>
+                                        <li class="list-group-item">quantity: {{product.quantity}}</li>
+                                        <li class="list-group-item">color {{product.color}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4 summary">
+            <div class="card" style="width: 100%;">
+                <div class="card-header">
+                    <h4 class="center"> Order Summary</h4>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span>Price:</span><span>{{priceSumary.price}}</span></li>
+                    <li class="list-group-item"><span>GST (9%):</span><span>{{priceSumary.tax}}</span></li>
+                    <li class="list-group-item"><span>Discount (15%):</span><span>{{priceSumary.discount}}</span></li>
+                    <li class="list-group-item"><span>Delivery Charges:</span><span>{{priceSumary.delivery}}</span>
+                    </li>
+                    <li class="list-group-item"><span>Total price:</span><span>{{priceSumary.total}}</span></li>
+                </ul>
+                <div class="footer-order-summary">
+                    <button class="form-button" (click)="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-sm-1"></div> -->
+    </div>
+</div>

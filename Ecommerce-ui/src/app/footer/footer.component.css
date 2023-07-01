@@ -1,0 +1,21 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.footer-container ul li {
+    list-style: none;
+    padding: 0 10px;
+}
+
+.footer-container .copyrights {
+    align-self: center;
+}

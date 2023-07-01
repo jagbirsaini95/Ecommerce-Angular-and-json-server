@@ -1,0 +1,30 @@
+.cart .details .product-img img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+    height: 30vh;
+    padding: 5%;
+}
+
+.cart .details .product-details {
+    width: 50%;
+}
+
+.cart .details .product-details .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart .details .collapsed {
+    background-color: rgb(163, 140, 184) !important;
+}
+
+.cart .summary .list-group-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart .summary .footer-order-summary {
+    text-align: center;
+    margin: 15px;
+}

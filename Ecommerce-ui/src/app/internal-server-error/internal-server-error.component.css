@@ -1,0 +1,30 @@
+.internal-server-error .error-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.internal-server-error .error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.internal-server-error .error-actions .btn {
+    margin-right: 10px;
+}
+
+.internal-server-error .error-actions .btn-home {
+    background-color: blueviolet;
+    color: aliceblue;
+    padding: 1%;
+}
+
+.internal-server-error .error-actions .btn-contactus {
+    background-color: transparent;
+    color: blueviolet;
+    border: 1px solid transparent;
+    padding: 1%;
+}
+
+.internal-server-error .error-actions .btn-contactus:hover {
+    border: 1px solid blueviolet;
+}

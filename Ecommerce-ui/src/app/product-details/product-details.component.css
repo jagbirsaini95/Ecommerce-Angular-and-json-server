@@ -1,0 +1,32 @@
+.product-details {
+  margin-top: 30px;
+}
+
+.product-details .product-image img {
+  width: 100%;
+  object-fit: contain;
+  height: 350px;
+  transition: height 2s;
+}
+.product-details .product-image img:hover {
+  height: 450px;
+  transition-timing-function: ease;
+}
+
+.product-details .product-color {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 1px solid blueviolet;
+}
+.product-details .inc-dec-buttons .form-input {
+  margin: 0px 10px;
+  cursor: not-allowed;
+  text-align: center;
+  width: 20%;
+}
+
+.product-details .inc-dec-buttons .form-button {
+  padding: 0 15px;
+}

@@ -1,0 +1,22 @@
+<div class="search-container">
+  <div>
+    <div class="row search-container-row" *ngFor="let product of searchResult">
+      <div class="col-sm-3 product-image-container">
+        <a routerLink="/product-details/{{ product.id }}"
+          ><img src="{{ product.imageURL }}"
+        /></a>
+      </div>
+      <div class="col-sm-7 product-details-container mt-3 ml-4">
+        <h4>
+          <a routerLink="/product-details/{{ product.id }}">
+            {{ product.name | titlecase }}
+          </a>
+        </h4>
+        <p>Price: {{ product.price | currency : "INR" }}</p>
+        <p>Color: {{ product.color }}</p>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="noProductFound">No product found</div>
+</div>

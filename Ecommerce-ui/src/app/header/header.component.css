@@ -1,0 +1,109 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.nav h1 {
+  margin: 0;
+  padding: 0 2%;
+}
+
+.nav h1 a {
+  text-decoration: none;
+}
+
+.nav ul {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  font-size: 20px;
+  border-right: 1px solid rgb(129, 10, 240);
+}
+
+.nav li:first-child {
+  border-left: 1px solid rgb(129, 10, 240);
+}
+
+.nav li a {
+  text-decoration: none;
+  padding: 6px;
+  margin: 4px;
+}
+
+.nav .nav-search {
+  flex: 1;
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  outline: 5px solid transparent;
+  border: 1px solid transparent;
+}
+
+.nav .nav-search:focus-within {
+  border-radius: 6px;
+  border: 1px solid rgb(175, 104, 241);
+  outline: 5px solid rgb(248, 230, 230);
+}
+
+.nav .nav-search input {
+  flex: 1;
+  border: 2px solid blueviolet;
+  height: 41px;
+  border-right: 0;
+  border-bottom-left-radius: 6px;
+  text-align: center;
+}
+
+.nav .nav-search input:focus-visible {
+  outline: none !important;
+  border-radius: initial;
+}
+
+.nav .nav-search button {
+  border: 2px solid blueviolet;
+  height: 41px;
+  border-left: 0;
+  background-color: transparent;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 0px;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+.nav .nav-search .btn-search {
+  color: blueviolet;
+}
+
+.nav .nav-search button:focus-visible {
+  outline: none !important;
+  background-color: rgb(244, 232, 255);
+  border-radius: initial;
+  font-style: italic;
+}
+
+.nav .list-box-container li {
+  padding-top: 0;
+}
+
+.nav .dropdown-search {
+  display: list-item !important;
+  background-color: blueviolet;
+  color: white;
+  position: absolute;
+  top: 60px;
+  width: 25%;
+  z-index: 9999;
+}
+
+.nav .dropdown-search-li .btn-unstyled-li {
+  padding: 5px 30px;
+  font-size: .8em;
+  width: 100%;
+  text-align: left;
+}

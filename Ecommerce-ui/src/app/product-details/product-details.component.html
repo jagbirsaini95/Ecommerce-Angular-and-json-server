@@ -1,0 +1,35 @@
+<div class="product-details" *ngIf="productDetail">
+  <div class="row">
+    <div class="col product-image pt-5">
+      <img src="{{ productDetail.imageURL }}" />
+    </div>
+    <div class="col pt-5">
+      <h1>{{ productDetail.name }}</h1>
+      <p>Price: {{ productDetail.price | currency : "INR" }}</p>
+      <p>Category: {{ productDetail.category }}</p>
+      Color:
+      <div class="product-color" [style.backgroundColor]="productDetail.color"></div>
+      <p>{{ productDetail.description }}</p>
+      <div class="inc-dec-buttons mt-3">
+        <button class="form-button" (click)="handleQuantity('minus')" placement="start"
+          ngbTooltip="{{ minMaxProductTooltip }}" [closeDelay]="500">
+          -
+        </button>
+        <input class="form-input" type="number" value="{{ productQuantity }}" disabled />
+        <button class="form-button" (click)="handleQuantity('plus')" placement="end"
+          ngbTooltip="{{ minMaxProductTooltip }}" [closeDelay]="500">
+          +
+        </button>
+      </div>
+      <div class="action-buttons mt-3">
+        <button *ngIf="!showRemoveCart" class="mx-sm-3 form-button" (click)="addToCart()">
+          Add Item
+        </button>
+        <button *ngIf="showRemoveCart" class="mx-sm-3 form-button" (click)="removeFromCart( productDetail.id)">
+          Remove Item
+        </button>
+        <button class="form-button" (click)="buyNow()">Buy now/Go to cart</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.user-auth .seller-form-footer {
+  padding-top: 20px;
+}
+
+.user-auth .auth-seller-btn {
+  text-align: center;
+  color: blueviolet;
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 3px;
+}
+.user-auth .error {
+  min-height: 21px;
+  margin-top: -18px;
+  font-size: 14px;
+}

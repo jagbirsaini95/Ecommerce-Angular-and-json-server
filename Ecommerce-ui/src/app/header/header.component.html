@@ -1,0 +1,45 @@
+<!-- Jagbir singh -->
+<nav class="nav">
+  <h1><a routerLink="home">StartUp.commm</a></h1>
+  <div *ngIf="menuType == 'default'" class="nav-search">
+    <input #searchInput type="text" (keyup)="inputSearchProducts($event)" (focus)="openDropdown()"
+      (blur)="closeDropdown()" placeholder="Search for products" />
+    <button class="btn-search" (click)="submitSearchProducts(searchInput.value)" [disabled]="searchButtonDisable">
+      Search
+    </button>
+    <ul class="dropdown-search">
+      <li class="dropdown-search-li" *ngFor="let product of searchProductResult">
+        <button class="btn-unstyled-li" (mousedown)="selectedSearchItem(product.id)">
+          {{ product.name }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div [ngSwitch]="menuType" class="list-box-container">
+    <ul *ngSwitchCase="'default'">
+      <li><a routerLink="seller-auth">Seller</a></li>
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="user-auth">Login/Signup</a></li>
+      <li><a routerLink="internal-error">Cart(<strong>{{cartItem || 0}}</strong>)</a></li>
+    </ul>
+    <ul *ngSwitchCase="'seller'">
+      <li><a routerLink="seller-add-product">Add Products</a></li>
+      <li><a routerLink="seller-home">List</a></li>
+      <li><a routerLink="" (click)="sellerLogout()">Logout</a></li>
+      <li>
+        <a routerLink="seller-home">{{ sellerName | titlecase }}</a>
+      </li>
+    </ul>
+    <ul *ngSwitchCase="'user'">
+      <li><a routerLink="seller-auth">Seller</a></li>
+      <li><a routerLink="home">Home</a></li>
+      <li><a routerLink="cart">Cart(<strong>{{cartItem }}</strong>)</a></li>
+      <li>
+        <a routerLink="my-orders">{{ userName | titlecase }}</a>
+      </li>
+      <li>
+        <a routerLink="" (click)="userLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

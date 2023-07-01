@@ -1,0 +1,27 @@
+.seller-auth .sign-up {
+  text-align: center;
+}
+
+.seller-auth .login {
+  text-align: center;
+}
+
+.seller-auth .login h1,
+.seller-auth .sign-up h1 {
+  color: blueviolet;
+}
+
+.seller-form-footer {
+  padding-top: 20px;
+}
+
+.auth-seller-btn {
+  text-align: center;
+  color: blueviolet;
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 3px;
+}

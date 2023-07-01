@@ -1,0 +1,89 @@
+<div class="seller-auth">
+  <!-- Seller sign up -->
+  <div class="sign-up" *ngIf="!showLogin">
+    <h1>Seller Sign Up</h1>
+    <form
+      #sellerSignUpForm="ngForm"
+      (ngSubmit)="onSignup(sellerSignUpForm.value)"
+      class="common-form"
+      ngNativeValidate
+    >
+      <input
+        class="form-input"
+        type="text"
+        ngModel
+        name="name"
+        placeholder="Enter Name"
+        required
+      />
+      <input
+        class="form-input"
+        type="email"
+        ngModel
+        name="email"
+        placeholder="Enter Email"
+        required
+      />
+      <input
+        class="form-input"
+        type="password"
+        ngModel
+        name="password"
+        placeholder="Enter Password"
+        autocomplete="password"
+        required
+      />
+      <input
+        class="form-input"
+        type="Password"
+        ngModel
+        name="cpassword"
+        placeholder="Confirm Password"
+        required
+      />
+      <span class="inline-error">{{ confirmPasswordError }}</span>
+      <button type="submit" class="form-button">Sign Up</button>
+      <span class="seller-form-footer">
+        Already have an account, To login
+        <button class="auth-seller-btn" (click)="openLogin()">
+          click here
+        </button>
+      </span>
+    </form>
+  </div>
+  <!-- Seller login -->
+  <div class="login" *ngIf="showLogin">
+    <h1>Seller Login</h1>
+    <span class="inline-error">{{ authError }}</span>
+    <form
+      #sellerLoginForm="ngForm"
+      (ngSubmit)="onLogin(sellerLoginForm.value)"
+      class="common-form"
+      ngNativeValidate
+    >
+      <input
+        class="form-input"
+        type="email"
+        ngModel
+        name="email"
+        placeholder="Enter Email"
+        required
+      />
+      <input
+        class="form-input"
+        type="password"
+        ngModel
+        name="password"
+        placeholder="Enter Password"
+        required
+      />
+      <button type="submit" class="form-button">Login</button>
+      <span class="seller-form-footer"
+        >Create a new account, To Signup
+        <button class="auth-seller-btn" (click)="openSignup()">
+          click here
+        </button>
+      </span>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.search-container .search-container-row {
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.search-container img {
+    width: 100%;
+    object-fit: contain;
+    background: linear-gradient(white, blueviolet, white);
+    height: 200px;
+    border-radius: 35%;
+}
+
+.search-container .product-details-container {
+    margin-left: 3rem;
+}

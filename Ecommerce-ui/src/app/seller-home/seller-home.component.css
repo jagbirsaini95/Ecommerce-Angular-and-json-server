@@ -1,0 +1,51 @@
+.product-list {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+}
+
+.product-list::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.product-list::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  border: 5px solid white;
+  /* should match background, can't be transparent */
+  background-color: rgba(138, 43, 226, 0.5);
+}
+
+.productlist-heading {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  align-self: center;
+}
+
+.product-list table {
+  border-collapse: collapse;
+  box-shadow: 10px 10px 5px 5px rgba(138, 43, 226, 0.1);
+  max-width: 550px;
+  margin: auto;
+}
+
+.product-list table img {
+  width: 14vh;
+  height: 16vh;
+}
+
+.product-list table thead td {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.product-list table thead td,
+.product-list table tbody td {
+  border: 2px solid blueviolet;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.product-list table td .form-button {
+  width: 42px;
+  font-size: 1.3rem;
+}
